@@ -1,36 +1,168 @@
 <style>
-  #share-buttons {display: inline-block; vertical-align: middle; }
-  #share-buttons:after {content: ""; display: block; clear: both;}
-  #share-buttons > div {position: relative; text-align: left; height: 36px; width: 32px; float: left; text-align: center;}
-  #share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
-  #share-buttons > div:hover {cursor: pointer;}
-  #share-buttons > div.facebook:hover > svg {fill: #3B5998;}
-  #share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
-  #share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
-  #share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
-  #share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
-  #share-buttons > div.instagram:hover > svg {fill: #C73B92;}
-  #share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
-  #share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
-  #share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
-  #share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
-  #share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
-  #share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+    #share-buttons {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    #share-buttons:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    #share-buttons > div {
+        position: relative;
+        text-align: left;
+        height: 36px;
+        width: 32px;
+        float: left;
+        text-align: center;
+    }
+    #share-buttons > div > svg {
+        height: 16px;
+        fill: #d5d5d5;
+        margin-top: 10px;
+    }
+    #share-buttons > div:hover {
+        cursor: pointer;
+    }
+    #share-buttons > div.facebook:hover > svg {
+        fill: #3b5998;
+    }
+    #share-buttons > div.twitter:hover > svg {
+        fill: #55acee;
+    }
+    #share-buttons > div.linkedin:hover > svg {
+        fill: #0077b5;
+    }
+    #share-buttons > div.gplus:hover > svg {
+        fill: #dd4b39;
+    }
+    #share-buttons > div.mail:hover > svg {
+        fill: #7d7d7d;
+    }
+    #share-buttons > div.instagram:hover > svg {
+        fill: #c73b92;
+    }
+    #share-buttons > div.facebook > svg {
+        height: 18px;
+        margin-top: 9px;
+    }
+    #share-buttons > div.twitter > svg {
+        height: 20px;
+        margin-top: 8px;
+    }
+    #share-buttons > div.linkedin > svg {
+        height: 19px;
+        margin-top: 7px;
+    }
+    #share-buttons > div.pinterest > svg {
+        height: 20px;
+        margin-top: 9px;
+    }
+    #share-buttons > div.gplus > svg {
+        height: 17px;
+        margin-top: 9px;
+        position: relative;
+        left: 1px;
+    }
+    #share-buttons > div.mail > svg {
+        height: 14px;
+        margin-top: 11px;
+    }
 </style>
 
-{% assign safeurl = site.url | append: page.url | url_encode %}
-{% assign safetitle = page.title | url_encode %}
-{% assign safetitlepre = "[Blog] " | append: page.author | append: " - " | url_encode %}
+{% assign safeurl = site.url | append: page.url | url_encode %} {% assign
+safetitle = page.title | url_encode %} {% assign safetitlepre = "[Blog] " |
+append: page.author | append: " - " | url_encode %}
 
-<span style="color: silver;">Share on: </span><div id="share-buttons">
-  <div class="facebook" title="Share this on Facebook"    onclick="window.open('http://www.facebook.com/share.php?u={{ safeurl }}','popup','width=600,height=600'); return false;">
-    <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
-  <div class="twitter"  title="Share this on Twitter"     onclick="window.open('https://twitter.com/intent/tweet?url={{ safeurl }}&text={{ safetitle }}&via={{ site.twitter_username }}','popup','width=600,height=600'); return false;">
-    <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
-  <div class="linkedin" title="Share this on Linkedin"    onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url={{ safeurl }}','popup','width=600,height=600'); return false;">
-    <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
-  <div class="gplus"    title="Share this on Google Plus" onclick="window.open('https://plus.google.com/share?url={{ safeurl }}','popup','width=600,height=600'); return false;">
-    <svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"/></svg></div>
-  <div class="mail"     title="Share this through Email"  onclick="window.open('mailto:?&body={{ safeurl }}&subject={{ safetitlepre }}{{ safetitle }}','popup','width=600,height=600'); return false;">
-    <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+<!-- # TODO: Add BlueSky -->
+<span style="color: silver">Share on: </span>
+<div id="share-buttons">
+    <div
+        class="facebook"
+        title="Share this on Facebook"
+        onclick="window.open('http://www.facebook.com/share.php?u={{ safeurl }}','popup','width=600,height=600'); return false;"
+    >
+        <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"
+            />
+        </svg>
+    </div>
+    <div
+        class="twitter"
+        title="Share this on Twitter"
+        onclick="window.open('https://twitter.com/intent/tweet?url={{ safeurl }}&text={{ safetitle }}&via={{ site.twitter_username }}','popup','width=600,height=600'); return false;"
+    >
+        <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"
+            />
+        </svg>
+    </div>
+    <div
+        class="linkedin"
+        title="Share this on Linkedin"
+        onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url={{ safeurl }}','popup','width=600,height=600'); return false;"
+    >
+        <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"
+            />
+        </svg>
+    </div>
+    <div
+        class="gplus"
+        title="Share this on Google Plus"
+        onclick="window.open('https://plus.google.com/share?url={{ safeurl }}','popup','width=600,height=600'); return false;"
+    >
+        <svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"
+            />
+        </svg>
+    </div>
+    <div
+        class="mail"
+        title="Share this through Email"
+        onclick="window.open('mailto:?&body={{ safeurl }}&subject={{ safetitlepre }}{{ safetitle }}','popup','width=600,height=600'); return false;"
+    >
+        <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"
+            />
+        </svg>
+    </div>
+    <div
+        class="bluesky"
+        title="Share this on BlueSky"
+        onclick="window.open('https://bsky.app/share?text={{ safetitle }}&url={{ safeurl }}','popup','width=600,height=600'); return false;"
+    >
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+        </svg>
+    </div>
+    <div
+        class="devto"
+        title="Share this on dev.to"
+        onclick="window.open('https://dev.to/share?url={{ safeurl }}&title={{ safetitle }}','popup','width=600,height=600'); return false;"
+    >
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M7.73 3.5H4.27c-.42 0-.77.35-.77.77v15.46c0 .42.35.77.77.77h3.46c.42 0 .77-.35.77-.77V4.27c0-.42-.35-.77-.77-.77zm5.5 0h-3.46c-.42 0-.77.35-.77.77v15.46c0 .42.35.77.77.77h3.46c.42 0 .77-.35.77-.77V4.27c0-.42-.35-.77-.77-.77zm5.5 0h-3.46c-.42 0-.77.35-.77.77v15.46c0 .42.35.77.77.77h3.46c.42 0 .77-.35.77-.77V4.27c0-.42-.35-.77-.77-.77z"
+            />
+        </svg>
+    </div>
+    <div
+        class="mastodon"
+        title="Share this on Mastodon"
+        onclick="window.open('https://mastodon.social/share?text={{ safetitle }}&url={{ safeurl }}','popup','width=600,height=600'); return false;"
+    >
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M12 2.04c-5.5 0-10 4.5-10 10 0 4.42 2.87 8.17 6.84 9.5.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.12-1.47-1.12-1.47-.92-.62.07-.6.07-.6 1.02.07 1.56 1.05 1.56 1.05.9 1.54 2.36 1.1 2.94.84.1-.66.36-1.1.66-1.35-2.22-.25-4.56-1.12-4.56-5 0-1.1.4-2 .98-2.7-.1-.25-.42-1.26.1-2.6 0 0 .84-.27 2.74 1.02.8-.22 1.66-.34 2.52-.34.86 0 1.72.12 2.52.34 1.9-1.3 2.74-1.02 2.74-1.02.52 1.34.2 2.35.1 2.6.6.7.98 1.6.98 2.7 0 3.88-2.34 4.75-4.56 5 .38.32.7.94.7 1.9v2.8c0 .26.18.58.68.48 3.97-1.33 6.84-5.08 6.84-9.5 0-5.5-4.5-10-10-10z"
+            />
+        </svg>
+    </div>
 </div>

@@ -1,5 +1,6 @@
-Here you can say lots of fun things about your site.
+Welcome to my blog! 👋
 
-Maybe say a some things about yourself.
+I'm Lucas, a Software Engineer for more than 5 years.
+I work mainly on Rails and React applications, and am open to Open Source projects sollicitation.
 
-Or maybe what you plan to blog about.
+<!-- TODO: A few things about me -->
