@@ -22,9 +22,13 @@ theme: "minima"
 
 rss: rss
 
+markdown: kramdown
 kramdown:
+  input: GFM
+  syntax_highlighter: rouge
   syntax_highlighter_opts:
-    disable: true
+    default_lang: ruby
+    guess_lang: true
 
 plugins:
   - jekyll-feed
