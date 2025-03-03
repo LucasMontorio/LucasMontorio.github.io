@@ -1,4 +1,4 @@
-title: "Lucas M.'s Tech Blog"
+title: "Lucas Montorio's Tech Blog"
 author: "Lucas M."
 description: "For all things Ruby, Rails, PostgreSQL, and more." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
 
@@ -47,3 +47,16 @@ defaults:
 
 minima:
   skin: dark
+  social_links:
+    - title: My Github Profile
+      icon: github
+      url: "https://github.com/LucasMontorio"
+    - title: LucasMontorio Profile
+      icon: bsky
+      url: "https://bsky.app/profile/lucas.montorio.net"
+    - title: My Dev.to Profile
+      icon: dev
+      url: "https://dev.to/lucasmontorio"
+    - title: Follow me on Mastodon
+      icon: mastodon
+      url: "https://ruby.social/@lucasm"
