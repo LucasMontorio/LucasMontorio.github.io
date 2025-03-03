@@ -52,8 +52,8 @@ minima:
       icon: github
       url: "https://github.com/LucasMontorio"
     - title: LucasMontorio Profile
-      icon: bsky
-      url: "https://bsky.app/profile/lucas.montorio.net"
+      icon: bluesky
+      url: "https://bsky.app/profile/lucasm0n.bsky.social"
     - title: My Dev.to Profile
       icon: dev
       url: "https://dev.to/lucasmontorio"
