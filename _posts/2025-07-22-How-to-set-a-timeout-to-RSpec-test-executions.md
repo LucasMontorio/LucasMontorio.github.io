@@ -1,4 +1,4 @@
-# Introduction / Motivation
+## Introduction / Motivation
 
 On one of the Rails application on which I am working, a Rails monolith, I recently stumbled upon a quite disturbing CI issue: in some of our RSpec runs, it happens that specs **timeout in an unpredictable way after having reached the CI environment’s (in our case, CircleCI) built-in “no-output timeout”**.
 
@@ -20,7 +20,7 @@ Hence, I started developing my own.
 
 *This article will go into the details of the strategy adopted for this solution, and the different phases through which I went before reaching a satisfactory implementation.*
 
-# First iteration / Thread-joining
+## First iteration / Thread-joining
 
 In order to achieve this, my first intention was to create a mechanism that could detect that a test has been running for too long, then terminate it with a helpful error message that would appear in the CI’s output.
 
@@ -155,7 +155,7 @@ Process finished with exit code 1
 ```
 </details>
 
-## Cleaning the error trace / better error-handling
+### Cleaning the error trace / better error-handling
 
 Despite being able to make a test fail based on its execution time, this would still generate quite a lot of noise, due to our overwriting some of RSpec’s internal logic.
 
@@ -224,7 +224,7 @@ Finished in 1.127036 seconds
 ```
 </details>
 
-## The `RSpec.current_example` issue / better thread handling
+### The `RSpec.current_example` issue / better thread handling
 
 Now that I was able to set an example-specific timeout threshold and get a clean error output in case of timeout, the next step was to allow the gem to **set a global value for this threshold**, thus allowing us to run an entire test suite with the same timing expectations.
 
@@ -314,7 +314,7 @@ end
 
 **This redesign solved the `RSpec.current_example` issue!**
 
-## Second iteration / single-thread monitoring implementation
+### Second iteration / single-thread monitoring implementation
 
 Now that the the RSpec example context issue was fixed, I was finally able to finalise a first (WIP) version of the gem: add specs, a CI suite, a proper README, … And finally test it on a production app’s CI run.
 
@@ -420,7 +420,7 @@ break if @mutex.synchronize { @active_tests.empty? }
 
 This single-threaded monitoring approach **dramatically reduced the number of threads** created during test suite execution, from potentially thousands to just one.
 
-## Notes / final comments
+### Notes / final comments
 
 
 > `RspecTimeGuard` was developed and tested primarily with MRI/CRuby, but we gave careful consideration to compatibility with other Ruby interpreters. The gem's core functionality relies on standard Ruby libraries and APIs that are implemented across different Ruby interpreters, making it broadly compatible in most scenarios.

@@ -1,4 +1,4 @@
-##Context
+## Context
 
 Let's consider the following code, defining basic classes and one custom error:
 
