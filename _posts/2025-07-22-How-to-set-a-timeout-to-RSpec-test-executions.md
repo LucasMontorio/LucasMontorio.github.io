@@ -1,5 +1,17 @@
 # How to set a timeout to RSpec test executions
 
+>## TL;DR
+>
+>Tired of tests hanging indefinitely in your CI pipeline, wasting resources and delaying feedback? I built **RspecTimeGuard**, a new gem that adds timeout protection to your RSpec test suite. Set time limits on individual tests or globally, and get clear error messages when tests exceed their limits instead of waiting for your CI to time out.
+>
+>🔗 **Check it out**: [https://github.com/LucasMontorio/rspec-time-guard](https://github.com/LucasMontorio/rspec-time-guard)
+>
+>This is my first gem, so any stars are more than welcome! ⭐
+>
+>The article below walks through the technical journey of building this solution, from initial thread-joining approaches to the final single-threaded monitoring implementation.
+
+&nbsp;
+
 ## Introduction / Motivation
 
 On one of the Rails application on which I am working, a Rails monolith, I recently stumbled upon a quite disturbing CI issue: in some of our RSpec runs, it happens that specs **timeout in an unpredictable way after having reached the CI environment’s (in our case, CircleCI) built-in “no-output timeout”**.
